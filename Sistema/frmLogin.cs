@@ -26,7 +26,7 @@ namespace Sistema
             try
             {
                 Control ctrl = new Control();
-                log();
+                
                 string respuesta = ctrl.ctrlLogin(usuario, password);
                 if (respuesta.Length > 0)
                 {
@@ -34,6 +34,7 @@ namespace Sistema
                 }
                 else
                 {
+                    log();
                     frmPrincipal frm = new frmPrincipal();
                     frm.Visible = true;
                     this.Visible = false;
@@ -57,8 +58,8 @@ namespace Sistema
         {
 
             DateTime fecha = DateTime.Now;
-
-            string sql = "insert into userlog (codUser,username,timeLoggedIn) Values ('" + user._codUser + "','" + txtUsuario.Text + "','" + fecha.ToString("yyyy-MM-dd HH:mm:ss");
+           
+            string sql = "insert into userlog (codUser,username,timeLoggedIn) Values ('" + user._codUser + "','" + txtUsuario.Text + "','" + fecha.ToString();
 
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
