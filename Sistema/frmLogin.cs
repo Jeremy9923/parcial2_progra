@@ -57,8 +57,7 @@ namespace Sistema
         private void log()
 
         {
-            Usuarios usuarios = new Usuarios();
-
+            Session session = new Session();
            
 
             
@@ -66,7 +65,7 @@ namespace Sistema
 
             DateTime fecha = DateTime.Now;
            
-            string sql = "insert into userlog (codUser,username,timeLoggedIn) Values ('" + usuarios._codUser + "','" +usuario + "','" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+            string sql = "insert into userlog (codUser,username,timeLoggedIn) Values ('" + Session.id + "','" +usuario + "','" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "')";
 
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
