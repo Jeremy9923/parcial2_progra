@@ -55,11 +55,18 @@ namespace Sistema
         }
         Usuarios user = new Usuarios();
         private void log()
+
         {
+            Usuarios usuarios = new Usuarios();
+
+           
+
+            
+            string usuario = txtUsuario.Text;
 
             DateTime fecha = DateTime.Now;
            
-            string sql = "insert into userlog (codUser,username,timeLoggedIn) Values ('" + user._codUser + "','" + txtUsuario.Text + "','" + fecha.ToString();
+            string sql = "insert into userlog (codUser,username,timeLoggedIn) Values ('" + usuarios._codUser + "','" +usuario + "','" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "')";
 
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
